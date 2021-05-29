@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Horace">
+    
+    <title>
+        
+            设置代理爬取豆瓣书籍 |
+        
+        Horaceの云端梦境
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"horacehht.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527154304090.png","favicon":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"可可爱爱，没有脑袋"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Horaceの云端梦境" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                Horaceの云端梦境
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">设置代理爬取豆瓣书籍</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527154304090.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Horace</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-29 23:57:06
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/python/">python</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>5.9k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>28 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="设置代理爬取豆瓣书籍"><a href="#设置代理爬取豆瓣书籍" class="headerlink" title="设置代理爬取豆瓣书籍"></a>设置代理爬取豆瓣书籍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>爬取网页大都可分为三个步骤：</p>
+<ol>
+<li>访问网页：一般使用requests库，不嫌麻烦的话可以使用python内置的urllib库</li>
+<li>解析网页：使用Xpath，BeautifulSoup，正则表达式等方式进行网页信息的提取</li>
+<li>存储数据：①存入IO流文件，如txt，csv等文件    ②存入数据库，主流的有MySQL，mongodb</li>
+</ol>
+<p>本文开发环境为python3.8，爬取的数据存入MySQL数据库中</p>
+<h2 id="访问网页"><a href="#访问网页" class="headerlink" title="访问网页"></a>访问网页</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&#x27;目标网址&#x27;</span></span><br><span class="line">res = requests.get(url)</span><br></pre></td></tr></table></figure>
+
+<p>这样即可完成一次网页的访问。但一般都要加上请求头，称为headers。一般的网站请求的headers中加入<code>User-Agent</code>项参数即可。</p>
+<p>如果你用的是谷歌浏览器，可在网页栏输入<code>chrome::version</code>查看自己的<code>User-Agent</code>项，叫“用户代理”</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521100544782.png"
+                      alt="image-20210521100544782"
+                ></p>
+<p>如果不是，也可以按F12，Ctrl+R，随便点进一个请求，<code>Requests Headers</code>项中的<code>User-Agent</code>就是你的User-Agent。</p>
+<p>于是代码应该改成这样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;填入你的user-agent&#x27;</span></span><br><span class="line">    ...根据不同的网站加入不同的参数</span><br><span class="line">&#125;</span><br><span class="line">res = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure>
+
+<p>不加的话，你的请求中User-Agent的值则是python爬虫，网站就会拒绝访问，这样你就无法得到网站返回的数据。</p>
+<h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><h4 id="为什么要设置代理？"><a href="#为什么要设置代理？" class="headerlink" title="为什么要设置代理？"></a>为什么要设置代理？</h4><p>背景：本人要在某次考核任务最后一天中爬取数据量超过3k5的数据，时间紧，数据量说小不小，说大不大。如果采用平常的爬虫方法，每一次time.sleep几秒，这样久了，豆瓣自然会发现，然后把ip给封了，这样就没办法爬了，考核任务就泡汤了…</p>
+<p>题外话：time.sleep()设置的秒数最好是<strong>随机数</strong>，如果是固定的秒数，久而久之也很容易被封ip。</p>
+<p>所以，<strong>设置代理</strong>这种切换ip的方式就很适合<strong>短时间爬取大量数据</strong></p>
+<p>代理有多种</p>
+<p>①自己去爬取免费的代理，建立自己的代理池，难度大，技术要求高，且大多免费代理都是用不了的。</p>
+<p>②使用付费代理</p>
+<p>本文中使用的是付费代理，叫多贝云代理，购买了http隧道代理中的套餐3，套餐的特点是：<strong>每个请求随机分配IP</strong></p>
+<p>注：购买时需要实名认证</p>
+<h4 id="获取分配的ip"><a href="#获取分配的ip" class="headerlink" title="获取分配的ip"></a>获取分配的ip</h4><p>注：不同的付费代理不同的套餐<strong>获取ip的方式不同</strong>，根据官方指示即可</p>
+<p>购买后，多贝云会分配一个账号，密码和服务器地址给你</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521214659733.png"
+                      alt="image-20210521214659733"
+                ></p>
+<p>根据他的指引构造代理参数即可</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521214853713.png"
+                      alt="image-20210521214853713"
+                ></p>
+<p>于是我们向服务器地址端口请求，服务器即可返回一个可用的ip来伪装我们的ip</p>
+<h3 id="访问网页函数"><a href="#访问网页函数" class="headerlink" title="访问网页函数"></a>访问网页函数</h3><p>于是我们定义一个访问网页的函数，返回响应。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">visit</span>(<span class="params">targetUrl</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;访问网址，返回响应&quot;&quot;&quot;</span></span><br><span class="line">    session = requests.Session()</span><br><span class="line">    session.keep_alive = <span class="literal">False</span></span><br><span class="line">    res = session.get(targetUrl, proxies=proxies, headers=random.choice(headers))</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p>这里我还用了随机UA，就是找了不同的user-agent，每次访问从中随机选取一个ua。</p>
+<p>这里的headers是个列表</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521233503065.png"
+                      alt="image-20210521233503065"
+                ></p>
+<h2 id="解析网页"><a href="#解析网页" class="headerlink" title="解析网页"></a>解析网页</h2><p>按F12或右键检查进入“开发者选项”，利用图片中红框的功能可以迅速定位所提取信息的节点位置</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521215919135.png"
+                      alt="image-20210521215919135"
+                ></p>
+<p>此处运用XPth和BeautifulSoup进行网页的解析，并将解析方法编写成类。</p>
+<p>注：建议对自己的解析方法多对几本书进行尝试，因为不同网页排版可能不同噢~</p>
+<p>爬取的字段为book_name（书名），author（作者），press（出版社），publishing_year（出版年份），page_num（页数），price（定价），ISBN，score（评分），rating_num（评分人数），content_introduction（内容简介），cover_url（封面图片网页链接），readers（读者的个人主页链接）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 库导入部分</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlBook</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, res</span>):</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.soup = BeautifulSoup(res.text, <span class="string">&#x27;lxml&#x27;</span>)  <span class="comment"># 初始化</span></span><br><span class="line">            self.html = etree.HTML(res.text)  <span class="comment"># 初始化</span></span><br><span class="line">            self.data = <span class="built_in">dict</span>()  <span class="comment"># 生成一个空字典</span></span><br><span class="line">            self.get_book_name()</span><br><span class="line">            self.get_author()</span><br><span class="line">            self.get_many()</span><br><span class="line">            self.get_score()</span><br><span class="line">            self.get_rating_num()</span><br><span class="line">            self.get_content()</span><br><span class="line">            self.get_image()</span><br><span class="line">            self.get_readers()</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;author&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;出版社:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;出版年:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;页数:&#x27;</span>, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;定价:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;ISBN:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;score&#x27;</span>, <span class="number">0.0</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;rating_num&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;readers&#x27;</span>, <span class="string">&#x27;[]&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_book_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        book_name = self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:itemreviewed&#x27;</span>&#125;).string</span><br><span class="line">        <span class="comment"># 找到节点名为span，属性property值为itemreviewd的节点，.string获取其文本内容</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;book_name&#x27;</span>, book_name)  <span class="comment"># 将其添加到字典中，下面的解析方法大同小异</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_author</span>(<span class="params">self</span>):</span></span><br><span class="line">        author = self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, text=re.<span class="built_in">compile</span>(<span class="string">&#x27;.*?作者.*?&#x27;</span>)).next_sibling.next_sibling\</span><br><span class="line">            .string.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;author&#x27;</span>, author)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_many</span>(<span class="params">self</span>):</span></span><br><span class="line">        want_to_spider = [<span class="string">&#x27;出版社:&#x27;</span>, <span class="string">&#x27;出版年:&#x27;</span>, <span class="string">&#x27;页数:&#x27;</span>, <span class="string">&#x27;定价:&#x27;</span>, <span class="string">&#x27;ISBN:&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.soup.find_all(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;pl&#x27;</span>&#125;):</span><br><span class="line">            <span class="keyword">if</span> i.string <span class="keyword">in</span> want_to_spider:</span><br><span class="line">                self.data.setdefault(i.string, i.next_sibling.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span>(<span class="params">self</span>):</span></span><br><span class="line">        score = <span class="built_in">float</span>(self.soup.find(name=<span class="string">&#x27;strong&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:average&#x27;</span>&#125;).string)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;score&#x27;</span>, score)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_rating_num</span>(<span class="params">self</span>):</span></span><br><span class="line">        rating_num = <span class="built_in">int</span>(self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:votes&#x27;</span>&#125;).string)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;rating_num&#x27;</span>, rating_num)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_content</span>(<span class="params">self</span>):</span></span><br><span class="line">        l = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.soup.find(name=<span class="string">&#x27;div&#x27;</span>, attrs=&#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;intro&#x27;</span>&#125;).contents:</span><br><span class="line">                l += <span class="built_in">str</span>(i)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, l.strip())</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_image</span>(<span class="params">self</span>):</span></span><br><span class="line">        image_url = self.soup.find(name=<span class="string">&#x27;img&#x27;</span>, attrs=&#123;<span class="string">&#x27;rel&#x27;</span>: <span class="string">&#x27;v:photo&#x27;</span>&#125;)[<span class="string">&#x27;src&#x27;</span>]  <span class="comment"># 获取节点的src属性值</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;cover_url&#x27;</span>, image_url)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_readers</span>(<span class="params">self</span>):</span></span><br><span class="line">        readers = <span class="built_in">str</span>(self.html.xpath(<span class="string">&#x27;//*[@id=&quot;collector&quot;]//div/div[2]/a/@href&#x27;</span>))  </span><br><span class="line">        <span class="comment"># 这里用的是xpath的解析方法，获取所有属性值为collector下的所有div节点下的第二个div节点的a节点的href属性值</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;readers&#x27;</span>, readers)</span><br></pre></td></tr></table></figure>
+
+<p>注：字典的setdefault函数是添加键值对的一种方式，<strong>如果已有这个键则不添加</strong>，没有则添加。</p>
+<p>这可以窥探出我为什么<strong>在try-except语句的except中加上相应字段的setdefault</strong>。因为豆瓣的书籍间网页排布是不同的，它就是比较特殊，有些书没有ISBN，有些书没有评分和评论人数…所以以固定的方式去提取这些字段，必会报错，所以遇到这种报错时，进到except语句为数据赋上一些方便处理的空值。<del>虽说我也不知道为什么之后还是有空值</del></p>
+<p>小插入一句，<strong>异常处理真的很重要！！！</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    一些可能会出错的语句</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e)  <span class="comment"># 这个print(e)可以让我们看到出错的原因，</span></span><br><span class="line">    <span class="keyword">pass</span>  <span class="comment"># 这里的pass你可以填入你异常处理的语句</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>这样子所有的字段数据都存入了data中</strong>，之后我们实例化一个对象，对象.data即可查看我们爬取的数据啦。</p>
+<p>我们以《追风筝的人》为例：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521223724610.png"
+                      alt="image-20210521223724610"
+                ></p>
+<h2 id="存储数据"><a href="#存储数据" class="headerlink" title="存储数据"></a>存储数据</h2><p>使用MySQL数据库进行数据的存储</p>
+<h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><p>要<strong>根据爬取的字段建立相应的表</strong>（如果是新用户还要新建连接，这里就不多赘述了）</p>
+<p>可以用python建表，也可以用navicat（MySQL的一个可视化工具）建表。</p>
+<p>这里用python建表</p>
+<p>python通过第三方库<strong>pymysql</strong>与MySQL与数据库进行交互，对数据进行增删查改。</p>
+<p>首先要<code>import pymysql</code>，没有安装库的就去安装。</p>
+<p>直接贴代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(  <span class="comment"># 连接本地数据库</span></span><br><span class="line">    host=<span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">    user=<span class="string">&quot;root&quot;</span>,  <span class="comment"># 要填root</span></span><br><span class="line">    password=<span class="string">&quot;htht0928&quot;</span>,  <span class="comment"># 填上自己的密码</span></span><br><span class="line">    database=<span class="string">&quot;doubanbook&quot;</span>,  <span class="comment"># 数据库名</span></span><br><span class="line">    charset=<span class="string">&quot;utf8&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">cur = conn.cursor()  <span class="comment"># 获得光标</span></span><br><span class="line">create_books_table_sql = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">     CREATE TABLE `books`(</span></span><br><span class="line"><span class="string">    `book_name` VARCHAR(20) NOT NULL UNIQUE,</span></span><br><span class="line"><span class="string">    `author` VARCHAR(20) NOT NULL,</span></span><br><span class="line"><span class="string">    `press` VARCHAR(20),</span></span><br><span class="line"><span class="string">    `publishing_year` VARCHAR(10),</span></span><br><span class="line"><span class="string">    `score` FLOAT,</span></span><br><span class="line"><span class="string">    `rating_num` INTEGER,</span></span><br><span class="line"><span class="string">    `page_num` VARCHAR(10),</span></span><br><span class="line"><span class="string">    `price` VARCHAR(10),</span></span><br><span class="line"><span class="string">    `ISBN` VARCHAR(30),</span></span><br><span class="line"><span class="string">    `content_introduction` VARCHAR(2000),</span></span><br><span class="line"><span class="string">    `cover_url` VARCHAR(100),</span></span><br><span class="line"><span class="string">    `readers` VARCHAR (400)</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span>  <span class="comment"># sql语句</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    cur.execute(create_books_table_sql)  <span class="comment"># 执行sql语句</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    conn.rollback()  <span class="comment"># 发生错误则回滚</span></span><br></pre></td></tr></table></figure>
+
+<p>运行后即可建立相应的表。</p>
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><p>编写save_to_mysql函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_to_mysql</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;data是书籍的信息，json格式，要插入到books这个表&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    book_name = data.get(<span class="string">&#x27;book_name&#x27;</span>)</span><br><span class="line">    author = data.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">    press = data.get(<span class="string">&#x27;出版社:&#x27;</span>)</span><br><span class="line">    publishing_year = data.get(<span class="string">&#x27;出版年:&#x27;</span>)</span><br><span class="line">    page_num = data.get(<span class="string">&#x27;页数:&#x27;</span>)</span><br><span class="line">    price = data.get(<span class="string">&#x27;定价:&#x27;</span>)</span><br><span class="line">    ISBN = data.get(<span class="string">&#x27;ISBN:&#x27;</span>)</span><br><span class="line">    score = data.get(<span class="string">&#x27;score&#x27;</span>)</span><br><span class="line">    rating_num = data.get(<span class="string">&#x27;rating_num&#x27;</span>)</span><br><span class="line">    content_introduction = data.get(<span class="string">&#x27;content_introduction&#x27;</span>)</span><br><span class="line">    cover_url = data.get(<span class="string">&#x27;cover_url&#x27;</span>)</span><br><span class="line">    readers = data.get(<span class="string">&#x27;readers&#x27;</span>)</span><br><span class="line">    insert_data = (book_name, author, press, publishing_year, score, rating_num, page_num, price, ISBN,</span><br><span class="line">                   content_introduction, cover_url, readers)</span><br><span class="line">    insert_sql = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        INSERT INTO books(book_name, author, press, publishing_year, score, rating_num, page_num, price,</span></span><br><span class="line"><span class="string">        ISBN, content_introduction, cover_url, readers)</span></span><br><span class="line"><span class="string">        VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>  <span class="comment"># 向字段中增添相应的数据</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 执行sql语句</span></span><br><span class="line">        cur.execute(insert_sql, insert_data)</span><br><span class="line">        <span class="comment"># 提交执行</span></span><br><span class="line">        conn.commit()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;《&#x27;</span> + book_name + <span class="string">&#x27;》&#x27;</span> + <span class="string">&#x27;信息已存储成功!&#x27;</span>)  <span class="comment"># 方便我们看到爬取的过程</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        conn.rollback()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;存储失败!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注：提取字典数据时没用dict[‘key’]的方法获取的原因是如果没有这个字段，会直接报错，整个程序直接停下来。</p>
+<p>如果用.get，即是没有这个字段，get这个字段会返回None，而不是报错。</p>
+<p>在爬取过程中，我遇到了爬取成功但是却发现数据并没有存入数据库中的情况，查阅资料后发现是<code>mysql锁住了</code>，进入win系统<strong>重启MySQL服务</strong>即可。</p>
+<h2 id="进行爬取"><a href="#进行爬取" class="headerlink" title="进行爬取"></a>进行爬取</h2><h3 id="流程介绍"><a href="#流程介绍" class="headerlink" title="流程介绍"></a>流程介绍</h3><p>爬取的整个过程：进入每个标签页，获取该页的20本书的url，再进入每本书的url进行信息的提取</p>
+<p>提取标签</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521230109014.png"
+                      alt="image-20210521230109014"
+                ></p>
+<p>进入标签页提取这页中20本书的url</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521230224249.png"
+                      alt="image-20210521230224249"
+                ></p>
+<p>随后就是进入书籍页面爬取数据。</p>
+<h3 id="编写相关函数"><a href="#编写相关函数" class="headerlink" title="编写相关函数"></a>编写相关函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl_tags</span>(<span class="params">page</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取每个标签网页的第page页&quot;&quot;&quot;</span></span><br><span class="line">    url = <span class="string">&#x27;https://book.douban.com/tag/?view=type&amp;icn=index-sorttags-all&#x27;</span></span><br><span class="line">    res = visit(url)</span><br><span class="line">    html = etree.HTML(res.text)</span><br><span class="line">    tags = html.xpath(<span class="string">&#x27;//*[@id=&quot;content&quot;]//tr/td/a/text()&#x27;</span>)</span><br><span class="line">    pages_url = [<span class="string">&#x27;https://book.douban.com/tag/&#x27;</span> + tag + <span class="string">&#x27;?=&#x27;</span> + <span class="built_in">str</span>((page-<span class="number">1</span>)*<span class="number">20</span>) + <span class="string">&#x27;&amp;type=T&#x27;</span> <span class="keyword">for</span> tag <span class="keyword">in</span> tags]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;已获取&#x27;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(pages_url)) + <span class="string">&#x27;个标签网页&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> pages_url</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_book_urls</span>(<span class="params">tag_url</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取每个标签网页中的第一页，20本书&quot;&quot;&quot;</span></span><br><span class="line">    l = <span class="built_in">set</span>()</span><br><span class="line">    i = <span class="number">20</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        res = visit(tag_url)</span><br><span class="line">        html = etree.HTML(res.text)</span><br><span class="line">        books_urls = html.xpath(<span class="string">&#x27;//*[@id=&quot;subject_list&quot;]/ul//li/div[2]/h2/a/@href&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> book_url <span class="keyword">in</span> books_urls:</span><br><span class="line">            l.add(book_url)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;已获取%d本书&#x27;</span> % i)</span><br><span class="line">        i += <span class="number">20</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;要停一会!休息2秒&#x27;</span>)  <span class="comment"># 因为爬了一定数据量后，代理会跳出proxyerror错误，停一会即可</span></span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(l)</span><br></pre></td></tr></table></figure>
+
+<p>之前没try-except语句总是爬一会就停，郁闷死我了。这种写法是我顿悟出来的，这样写之后，真的是<strong>飞快地爬</strong>。</p>
+<p>下面还会用到这样的写法</p>
+<p><strong>主函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    tags_url = crawl_tags(<span class="number">1</span>)  <span class="comment"># 获取每个标签页的第一页</span></span><br><span class="line">    <span class="comment"># 我们可以通过对crawl_tags传入不同的页数，获取每个标签页的第n页</span></span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> tags_url:</span><br><span class="line">        book_urls = get_book_urls(page)  <span class="comment"># 某个标签的第一页的书链接</span></span><br><span class="line">        <span class="keyword">for</span> book_url <span class="keyword">in</span> book_urls:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                res = visit(book_url)  <span class="comment"># 对那一页的一本书进行访问</span></span><br><span class="line">                book = CrawlBook(res)  <span class="comment"># 建立一个书对象，data存放其信息，以json存储</span></span><br><span class="line">                save_to_mysql(book.data)  <span class="comment"># 将该书信息插入mysql中，继续第二本</span></span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                <span class="built_in">print</span>(e)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;歇一会QAQ，就2秒&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 换到另外一个标签的第1页</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="爬取过程截图"><a href="#爬取过程截图" class="headerlink" title="爬取过程截图"></a>爬取过程截图</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521231810540.png"
+                      alt="image-20210521231810540"
+                ></p>
+<p>这是我保存下来的截图之一，可见，存储数据时经常会遇到一些我们意向不到的报错，所以<strong>异常处理真的很重要啊！！！</strong></p>
+<p><strong>少年，一定要学会用try-except语句啊！！！你刚开始学异常处理觉得没什么用，等你遭受过毒打就知道有多重要了！！！</strong></p>
+<p>这是数据库中的部分数据（用了navicat）</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521233153437.png"
+                      alt="image-20210521233153437"
+                ></p>
+<h2 id="下载书籍图片"><a href="#下载书籍图片" class="headerlink" title="下载书籍图片"></a>下载书籍图片</h2><p>因为我考核有一个界面要做书籍信息的展示，要贴书的封面图，所以还要下载下来。</p>
+<p>我们数据库中存储的字段里有图片链接（cover_url），我们提取出来，对每个链接进行访问，进行图片的下载。</p>
+<p>直接贴代码：（visit函数跟之前是一样的）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    sql_f = <span class="string">&quot;SELECT * FROM books&quot;</span> <span class="comment"># 选取所有书</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(sql_f)</span><br><span class="line">        results = cur.fetchall()  <span class="comment"># 获得匹配结果</span></span><br><span class="line">        columnDes = cur.description  <span class="comment"># 获取连接对象的描述信息</span></span><br><span class="line">        columnNames = [columnDes[i][<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(columnDes))]  <span class="comment"># 获取列名</span></span><br><span class="line">        <span class="comment"># 得到的results为二维元组，逐行取出，转化为列表，再转化为df</span></span><br><span class="line">        books_df = pd.DataFrame([<span class="built_in">list</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> results], columns=columnNames)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    books_df = books_df.dropna(axis=<span class="number">0</span>, subset=[<span class="string">&quot;cover_url&quot;</span>])  <span class="comment"># 去除cover_url有缺失值的行</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;books_cover&#x27;</span> <span class="keyword">in</span> os.listdir(os.getcwd()):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        os.mkdir(<span class="string">&#x27;books_cover&#x27;</span>)  <span class="comment"># 创建books_cover目录，负责存放书籍封面图</span></span><br><span class="line">    os.chdir(<span class="string">&#x27;books_cover&#x27;</span>)  <span class="comment"># 切换到books_cover目录</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(books_df)):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            res = visit(books_df.iloc[i][<span class="number">10</span>])  <span class="comment"># 访问图片链接</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;歇一会吧QAQ，就2秒&quot;</span>)</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;正在保存第&quot;</span> + <span class="built_in">str</span>(i + <span class="number">1</span>) + <span class="string">&quot;张图片...&quot;</span>)</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(books_df.iloc[i][<span class="number">0</span>] + <span class="string">&#x27;.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(res.content)  <span class="comment"># 以书名为文件名下载图片</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;保存失败!&#x27;</span>)</span><br><span class="line">    conn.close()  <span class="comment"># 关闭python与mysql的连接</span></span><br></pre></td></tr></table></figure>
+
+<p>示例截图：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521234006967.png"
+                      alt="image-20210521234006967"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521234106695.png"
+                      alt="image-20210521234106695"
+                ></p>
+<h2 id="整体代码"><a href="#整体代码" class="headerlink" title="整体代码"></a>整体代码</h2><h3 id="crawl-book文件"><a href="#crawl-book文件" class="headerlink" title="crawl_book文件"></a>crawl_book文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 库导入部分</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlBook</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, res</span>):</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.soup = BeautifulSoup(res.text, <span class="string">&#x27;lxml&#x27;</span>)  <span class="comment"># 初始化</span></span><br><span class="line">            self.html = etree.HTML(res.text)  <span class="comment"># 初始化</span></span><br><span class="line">            self.data = <span class="built_in">dict</span>()  <span class="comment"># 生成一个空字典</span></span><br><span class="line">            self.get_book_name()</span><br><span class="line">            self.get_author()</span><br><span class="line">            self.get_many()</span><br><span class="line">            self.get_score()</span><br><span class="line">            self.get_rating_num()</span><br><span class="line">            self.get_content()</span><br><span class="line">            self.get_image()</span><br><span class="line">            self.get_readers()</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;author&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;出版社:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;出版年:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;页数:&#x27;</span>, <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;定价:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;ISBN:&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;score&#x27;</span>, <span class="number">0.0</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;rating_num&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;readers&#x27;</span>, <span class="string">&#x27;[]&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_book_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        book_name = self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:itemreviewed&#x27;</span>&#125;).string</span><br><span class="line">        <span class="comment"># 找到节点名为span，属性property值为itemreviewd的节点，.string获取其文本内容</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;book_name&#x27;</span>, book_name)  <span class="comment"># 将其添加到字典中，下面的解析方法大同小异</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_author</span>(<span class="params">self</span>):</span></span><br><span class="line">        author = self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, text=re.<span class="built_in">compile</span>(<span class="string">&#x27;.*?作者.*?&#x27;</span>)).next_sibling.next_sibling\</span><br><span class="line">            .string.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;author&#x27;</span>, author)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_many</span>(<span class="params">self</span>):</span></span><br><span class="line">        want_to_spider = [<span class="string">&#x27;出版社:&#x27;</span>, <span class="string">&#x27;出版年:&#x27;</span>, <span class="string">&#x27;页数:&#x27;</span>, <span class="string">&#x27;定价:&#x27;</span>, <span class="string">&#x27;ISBN:&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.soup.find_all(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;pl&#x27;</span>&#125;):</span><br><span class="line">            <span class="keyword">if</span> i.string <span class="keyword">in</span> want_to_spider:</span><br><span class="line">                self.data.setdefault(i.string, i.next_sibling.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span>(<span class="params">self</span>):</span></span><br><span class="line">        score = <span class="built_in">float</span>(self.soup.find(name=<span class="string">&#x27;strong&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:average&#x27;</span>&#125;).string)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;score&#x27;</span>, score)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_rating_num</span>(<span class="params">self</span>):</span></span><br><span class="line">        rating_num = <span class="built_in">int</span>(self.soup.find(name=<span class="string">&#x27;span&#x27;</span>, attrs=&#123;<span class="string">&#x27;property&#x27;</span>: <span class="string">&#x27;v:votes&#x27;</span>&#125;).string)</span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;rating_num&#x27;</span>, rating_num)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_content</span>(<span class="params">self</span>):</span></span><br><span class="line">        l = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> self.soup.find(name=<span class="string">&#x27;div&#x27;</span>, attrs=&#123;<span class="string">&#x27;class&#x27;</span>: <span class="string">&#x27;intro&#x27;</span>&#125;).contents:</span><br><span class="line">                l += <span class="built_in">str</span>(i)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, l.strip())</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line">            self.data.setdefault(<span class="string">&#x27;content_introduction&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_image</span>(<span class="params">self</span>):</span></span><br><span class="line">        image_url = self.soup.find(name=<span class="string">&#x27;img&#x27;</span>, attrs=&#123;<span class="string">&#x27;rel&#x27;</span>: <span class="string">&#x27;v:photo&#x27;</span>&#125;)[<span class="string">&#x27;src&#x27;</span>]  <span class="comment"># 获取节点的src属性值</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;cover_url&#x27;</span>, image_url)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_readers</span>(<span class="params">self</span>):</span></span><br><span class="line">        readers = <span class="built_in">str</span>(self.html.xpath(<span class="string">&#x27;//*[@id=&quot;collector&quot;]//div/div[2]/a/@href&#x27;</span>))  </span><br><span class="line">        <span class="comment"># 这里用的是xpath的解析方法，获取所有属性值为collector下的所有div节点下的第二个div节点的a节点的href属性值</span></span><br><span class="line">        self.data.setdefault(<span class="string">&#x27;readers&#x27;</span>, readers)</span><br></pre></td></tr></table></figure>
+
+<h3 id="crawl文件"><a href="#crawl文件" class="headerlink" title="crawl文件"></a>crawl文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> crawl_book <span class="keyword">import</span> CrawlBook</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(  <span class="comment"># 连接本地数据库</span></span><br><span class="line">        host=<span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">        user=<span class="string">&quot;root&quot;</span>,  <span class="comment"># 要填root</span></span><br><span class="line">        password=<span class="string">&quot;htht0928&quot;</span>,  <span class="comment"># 填上自己的密码</span></span><br><span class="line">        database=<span class="string">&quot;doubanbook&quot;</span>,  <span class="comment"># 数据库名</span></span><br><span class="line">        charset=<span class="string">&quot;utf8&quot;</span></span><br><span class="line">    )</span><br><span class="line">cur = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; SV1; QQDownload 732; .NET4.0C; .NET4.0E; SE 2.X MetaSr 1.0)&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># http代理接入服务器地址端口</span></span><br><span class="line">proxyHost = <span class="string">&quot;http-proxy-t3.dobel.cn&quot;</span></span><br><span class="line">proxyPort = <span class="string">&quot;9180&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#账号密码</span></span><br><span class="line">proxyUser = <span class="string">&quot;HORACEC0JB9ONL0&quot;</span></span><br><span class="line">proxyPass = <span class="string">&quot;t7PG9y5o&quot;</span></span><br><span class="line"></span><br><span class="line">proxyMeta = <span class="string">&quot;http://%(user)s:%(pass)s@%(host)s:%(port)s&quot;</span> % &#123;</span><br><span class="line">    <span class="string">&quot;host&quot;</span> : proxyHost,</span><br><span class="line">    <span class="string">&quot;port&quot;</span> : proxyPort,</span><br><span class="line">    <span class="string">&quot;user&quot;</span> : proxyUser,</span><br><span class="line">    <span class="string">&quot;pass&quot;</span> : proxyPass,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">proxies = &#123;</span><br><span class="line">    <span class="string">&quot;http&quot;</span>  : proxyMeta,</span><br><span class="line">    <span class="string">&quot;https&quot;</span> : proxyMeta,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">visit</span>(<span class="params">targetUrl</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;访问网址，返回响应&quot;&quot;&quot;</span></span><br><span class="line">    session = requests.Session()</span><br><span class="line">    session.keep_alive = <span class="literal">False</span></span><br><span class="line">    res = session.get(targetUrl, proxies=proxies, headers=random.choice(headers))</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl_tags</span>(<span class="params">page</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取每个标签网页的page页&quot;&quot;&quot;</span></span><br><span class="line">    url = <span class="string">&#x27;https://book.douban.com/tag/?view=type&amp;icn=index-sorttags-all&#x27;</span></span><br><span class="line">    res = visit(url)</span><br><span class="line">    html = etree.HTML(res.text)</span><br><span class="line">    tags = html.xpath(<span class="string">&#x27;//*[@id=&quot;content&quot;]//tr/td/a/text()&#x27;</span>)</span><br><span class="line">    pages_url = [<span class="string">&#x27;https://book.douban.com/tag/&#x27;</span> + tag + <span class="string">&#x27;?=&#x27;</span> + <span class="built_in">str</span>((page-<span class="number">1</span>)*<span class="number">20</span>) + <span class="string">&#x27;&amp;type=T&#x27;</span> <span class="keyword">for</span> tag <span class="keyword">in</span> tags]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;已获取&#x27;</span> + <span class="built_in">str</span>(<span class="built_in">len</span>(pages_url)) + <span class="string">&#x27;个标签网页&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> pages_url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_book_urls</span>(<span class="params">tag_url</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取每个标签网页中的第一页，20本书&quot;&quot;&quot;</span></span><br><span class="line">    l = <span class="built_in">set</span>()</span><br><span class="line">    i = <span class="number">20</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        res = visit(tag_url)</span><br><span class="line">        html = etree.HTML(res.text)</span><br><span class="line">        books_urls = html.xpath(<span class="string">&#x27;//*[@id=&quot;subject_list&quot;]/ul//li/div[2]/h2/a/@href&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> book_url <span class="keyword">in</span> books_urls:</span><br><span class="line">            l.add(book_url)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;已获取%d本书&#x27;</span> % i)</span><br><span class="line">        i += <span class="number">20</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;要停一会!休息2秒&#x27;</span>)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(l)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_to_mysql</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;data是书籍的信息，json格式，要插入到release这个表&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    book_name = data.get(<span class="string">&#x27;book_name&#x27;</span>)</span><br><span class="line">    author = data.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">    press = data.get(<span class="string">&#x27;出版社:&#x27;</span>)</span><br><span class="line">    publishing_year = data.get(<span class="string">&#x27;出版年:&#x27;</span>)</span><br><span class="line">    page_num = data.get(<span class="string">&#x27;页数:&#x27;</span>)</span><br><span class="line">    price = data.get(<span class="string">&#x27;定价:&#x27;</span>)</span><br><span class="line">    ISBN = data.get(<span class="string">&#x27;ISBN:&#x27;</span>)</span><br><span class="line">    score = data.get(<span class="string">&#x27;score&#x27;</span>)</span><br><span class="line">    rating_num = data.get(<span class="string">&#x27;rating_num&#x27;</span>)</span><br><span class="line">    content_introduction = data.get(<span class="string">&#x27;content_introduction&#x27;</span>)</span><br><span class="line">    cover_url = data.get(<span class="string">&#x27;cover_url&#x27;</span>)</span><br><span class="line">    readers = data.get(<span class="string">&#x27;readers&#x27;</span>)</span><br><span class="line">    insert_data = (book_name, author, press, publishing_year, score, rating_num, page_num, price, ISBN,</span><br><span class="line">                   content_introduction, cover_url, readers)</span><br><span class="line">    insert_sql = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        INSERT INTO books(book_name, author, press, publishing_year, score, rating_num, page_num, price,</span></span><br><span class="line"><span class="string">        ISBN, content_introduction, cover_url, readers)</span></span><br><span class="line"><span class="string">        VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 执行sql语句</span></span><br><span class="line">        cur.execute(insert_sql, insert_data)</span><br><span class="line">        <span class="comment"># 提交执行</span></span><br><span class="line">        conn.commit()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;《&#x27;</span> + book_name + <span class="string">&#x27;》&#x27;</span> + <span class="string">&#x27;信息已存储成功!&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">        conn.rollback()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;存储失败!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    tags_url = crawl_tags(<span class="number">4</span>)  <span class="comment"># 获取第一页</span></span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> tags_url:</span><br><span class="line">        book_urls = get_book_urls(page)  <span class="comment"># 某个标签的第一页的书链接</span></span><br><span class="line">        <span class="keyword">for</span> book_url <span class="keyword">in</span> book_urls:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                res = visit(book_url)  <span class="comment"># 对那一页的一本书进行访问</span></span><br><span class="line">                book = CrawlBook(res)  <span class="comment"># 建立一个书对象，data存放其信息，以json存储</span></span><br><span class="line">                save_to_mysql(book.data)  <span class="comment"># 将该书信息插入mysql中，继续第二本</span></span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                <span class="built_in">print</span>(e)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;歇一会QAQ，就2秒&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">3</span>)</span><br><span class="line">    <span class="comment"># 换到另外一个标签的第1页</span></span><br><span class="line">    start = <span class="number">20</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">60</span>):</span><br><span class="line">        new = start + i*<span class="number">20</span></span><br><span class="line">        url = <span class="string">&#x27;https://book.douban.com/tag/%E6%97%85%E8%A1%8C?start=&#x27;</span> + <span class="built_in">str</span>(new) + <span class="string">&#x27;&amp;type=T&#x27;</span></span><br><span class="line">        book_urls = get_book_urls(url)</span><br><span class="line">        <span class="keyword">for</span> book_url <span class="keyword">in</span> book_urls:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                res = visit(book_url)</span><br><span class="line">                book = CrawlBook(res)</span><br><span class="line">                save_to_mysql(book.data)</span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                <span class="built_in">print</span>(e)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;歇一会QAQ，就2秒&#x27;</span>)</span><br><span class="line">                time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;爬取完成!&#x27;</span>)</span><br><span class="line">    conn.close()  <span class="comment"># 关闭连接，不然多了，数据库会锁</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="download-image文件"><a href="#download-image文件" class="headerlink" title="download_image文件"></a>download_image文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(  <span class="comment"># 连接本地数据库</span></span><br><span class="line">        host=<span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">        user=<span class="string">&quot;root&quot;</span>,  <span class="comment"># 要填root</span></span><br><span class="line">        password=<span class="string">&quot;htht0928&quot;</span>,  <span class="comment"># 填上自己的密码</span></span><br><span class="line">        database=<span class="string">&quot;doubanbook&quot;</span>,  <span class="comment"># 数据库名</span></span><br><span class="line">        charset=<span class="string">&quot;utf8&quot;</span></span><br><span class="line">    )</span><br><span class="line">cur = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; SV1; QQDownload 732; .NET4.0C; .NET4.0E; SE 2.X MetaSr 1.0)&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36&quot;</span>,</span><br><span class="line">        <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;close&#x27;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># http代理接入服务器地址端口</span></span><br><span class="line">proxyHost = <span class="string">&quot;http-proxy-t3.dobel.cn&quot;</span></span><br><span class="line">proxyPort = <span class="string">&quot;9180&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#账号密码</span></span><br><span class="line">proxyUser = <span class="string">&quot;HORACEC0JB9ONL0&quot;</span></span><br><span class="line">proxyPass = <span class="string">&quot;t7PG9y5o&quot;</span></span><br><span class="line"></span><br><span class="line">proxyMeta = <span class="string">&quot;http://%(user)s:%(pass)s@%(host)s:%(port)s&quot;</span> % &#123;</span><br><span class="line">    <span class="string">&quot;host&quot;</span> : proxyHost,</span><br><span class="line">    <span class="string">&quot;port&quot;</span> : proxyPort,</span><br><span class="line">    <span class="string">&quot;user&quot;</span> : proxyUser,</span><br><span class="line">    <span class="string">&quot;pass&quot;</span> : proxyPass,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">proxies = &#123;</span><br><span class="line">    <span class="string">&quot;http&quot;</span>  : proxyMeta,</span><br><span class="line">    <span class="string">&quot;https&quot;</span> : proxyMeta,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">visit</span>(<span class="params">targetUrl</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;访问网址，返回响应&quot;&quot;&quot;</span></span><br><span class="line">    session = requests.Session()</span><br><span class="line">    session.keep_alive = <span class="literal">False</span></span><br><span class="line">    res = session.get(targetUrl, proxies=proxies, headers=random.choice(headers))</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    sql_f = <span class="string">&quot;SELECT * FROM books&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cur.execute(sql_f)</span><br><span class="line">        results = cur.fetchall()</span><br><span class="line">        columnDes = cur.description  <span class="comment"># 获取连接对象的描述信息</span></span><br><span class="line">        columnNames = [columnDes[i][<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(columnDes))]  <span class="comment"># 获取列名</span></span><br><span class="line">        <span class="comment"># 得到的results为二维元组，逐行取出，转化为列表，再转化为df</span></span><br><span class="line">        books_df = pd.DataFrame([<span class="built_in">list</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> results], columns=columnNames)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    books_df = books_df.dropna(axis=<span class="number">0</span>, subset=[<span class="string">&quot;cover_url&quot;</span>])  <span class="comment"># 去除cover_url有缺失值的行</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;books_cover&#x27;</span> <span class="keyword">in</span> os.listdir(os.getcwd()):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        os.mkdir(<span class="string">&#x27;books_cover&#x27;</span>)</span><br><span class="line">    os.chdir(<span class="string">&#x27;books_cover&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(books_df)):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            res = visit(books_df.iloc[i][<span class="number">10</span>])</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(e)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;歇一会吧QAQ，就2秒&quot;</span>)</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;正在保存第&quot;</span> + <span class="built_in">str</span>(i + <span class="number">1</span>) + <span class="string">&quot;张图片...&quot;</span>)</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(books_df.iloc[i][<span class="number">0</span>] + <span class="string">&#x27;.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(res.content)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;保存失败!&#x27;</span>)</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是我<strong>5.14一天</strong>的爬虫过程（一周后的回顾）…还真是人不逼自己一把，就不知道自己的潜力有多大。</p>
+<p>这是代理帮我统计我一天的请求次数，1w8，我也没想到hhh</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521234721368.png"
+                      alt="image-20210521234721368"
+                ></p>
+<p>其中遇到了很多的困难，数据插入问题，报错proxyerror，mysql锁住了…所幸都解决了</p>
+<p>解决的方式或是查阅资料，或是灵光乍现…</p>
+<p>那一天太累了，真的太累了，出现问题-&gt;解决问题-&gt;出现问题-&gt;解决问题-&gt;…</p>
+<p>感谢我的好朋友愿意陪我聊天<del>（当我的文件传输助手）</del>，在我低落的时候给予我精神上的鼓励</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210521235019716.png"
+                      alt="image-20210521235019716"
+                ></p>
+<p>龙哥，我是你的粉丝啊！（<del>飞踢</del>飞扑）</p>
+<p>那么，此次的爬虫回顾结束🔚啦。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：设置代理爬取豆瓣书籍</li>
+        <li>本文作者：Horace</li>
+        <li>创建时间：2021-05-29 23:57:06</li>
+        <li>
+            本文链接：https://horacehht.github.io/2021/05/29/设置代理爬取豆瓣书籍/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/29/%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">利用hexo框架搭建个人博客</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Horace</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E4%B9%A6%E7%B1%8D"><span class="nav-number">1.</span> <span class="nav-text">设置代理爬取豆瓣书籍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5"><span class="nav-number">1.2.</span> <span class="nav-text">访问网页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">设置代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%EF%BC%9F"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">为什么要设置代理？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%88%86%E9%85%8D%E7%9A%84ip"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">获取分配的ip</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">访问网页函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5"><span class="nav-number">1.3.</span> <span class="nav-text">解析网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE"><span class="nav-number">1.4.</span> <span class="nav-text">存储数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E8%A1%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.4.2.</span> <span class="nav-text">插入数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E7%88%AC%E5%8F%96"><span class="nav-number">1.5.</span> <span class="nav-text">进行爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.5.1.</span> <span class="nav-text">流程介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text">编写相关函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%AC%E5%8F%96%E8%BF%87%E7%A8%8B%E6%88%AA%E5%9B%BE"><span class="nav-number">1.5.3.</span> <span class="nav-text">爬取过程截图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B9%A6%E7%B1%8D%E5%9B%BE%E7%89%87"><span class="nav-number">1.6.</span> <span class="nav-text">下载书籍图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E4%BB%A3%E7%A0%81"><span class="nav-number">1.7.</span> <span class="nav-text">整体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#crawl-book%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.1.</span> <span class="nav-text">crawl_book文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#crawl%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.2.</span> <span class="nav-text">crawl文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#download-image%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.3.</span> <span class="nav-text">download_image文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.8.</span> <span class="nav-text">总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
