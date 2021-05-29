@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Horace">
+    
+    <title>
+        
+            利用hexo框架搭建个人博客 |
+        
+        Horaceの云端梦境
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"horacehht.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527154304090.png","favicon":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"可可爱爱，没有脑袋"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Horaceの云端梦境" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                Horaceの云端梦境
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">利用hexo框架搭建个人博客</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527154304090.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Horace</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-29 14:25:10
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/hexo/">hexo</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="利用hexo框架搭建个人博客"><a href="#利用hexo框架搭建个人博客" class="headerlink" title="利用hexo框架搭建个人博客"></a>利用hexo框架搭建个人博客</h1><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>由于我之前安装了就不说了</p>
+<p>可以百度搜索🔍git官网。git是可以一直无脑下一步安装的。相信这不会难倒聪明的你</p>
+<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p>进入官网<a class="link"   target="_blank" rel="noopener" href="https://nodejs.org/en/download/%E9%80%89%E6%8B%A9%E5%AF%B9%E5%BA%94%E7%9A%84%E7%89%88%E6%9C%AC%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD" >https://nodejs.org/en/download/选择对应的版本进行下载<i class="fas fa-external-link-alt"></i></a></p>
+<p>安装时一路next即可（路径你自己选）</p>
+<p>安装成功后，win+R，输入cmd进入命令行，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+<p>如果呈现这样的就界面，则表示安装成功</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210525205236141.png"
+                      alt="image-20210525205236141"
+                ></p>
+<p>另外，可以用git bash代替命令行来敲命令</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>自己创建一个文件夹，我这里新建了一个blog文件夹，点进去后右键git bash here</p>
+<p>git bash内输入<code>hexo init name</code>，这里的name你爱怎么填怎么填</p>
+<p>过程中可能会报错<code>OpenSSL SSL_read: Connection was reset, errno 10054</code></p>
+<p>最有可能是<strong>网络不稳定</strong>，github经常这样，至于原因，大家懂得都懂，有时候科学上网之后也是这样。</p>
+<p>这里我输入了<code>hexo init Horace</code></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210525211253771.png"
+                      alt="image-20210525211253771" style="zoom: 80%;" 
+                >
+
+<p>出现这样的界面即初始化成功</p>
+<p>随后，<code>cd Horace</code>进入刚刚初始化的文件夹内，输入<code>npm install</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210525211800200.png"
+                      alt="image-20210525211800200"
+                ></p>
+<p>随后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>或是输入<code>hexo s</code></p>
+<p>打开hexo服务，浏览器输入<code>localhost:4000</code>，即可看到刚刚创建的博客了。长这样子：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210525211944802.png"
+                      alt="image-20210525211944802"
+                ></p>
+<p>可以通过Ctrl+C停止hexo服务。</p>
+<p>停止服务后，再输入<code>localhost:4000</code>就登不上网站了。</p>
+<h2 id="部署到云端"><a href="#部署到云端" class="headerlink" title="部署到云端"></a>部署到云端</h2><p>这里可以看到，我们输入的网址是<code>localhost:4000</code>，并不是个静态链接</p>
+<p>而我们搭个人博客本身就是想别人来看的，如果别人都点不进来，那有什么意义啊？</p>
+<p>所以，<strong>要让我们的个人博客可以被别人访问到</strong>，我们可以<strong>将我们的网站部署到云端</strong>（不是唯一的方式）</p>
+<p>这里就让github托管我们的博客。</p>
+<h3 id="创建github账户与创建对应仓库"><a href="#创建github账户与创建对应仓库" class="headerlink" title="创建github账户与创建对应仓库"></a>创建github账户与创建对应仓库</h3><p>注册一个github账户，创建（new）一个仓库，仓库名叫<code>用户名+.github.io</code></p>
+<p>我的用户名是horacehht，因此创建一个<code>horacehht.github.io</code>的仓库</p>
+<h3 id="生成SSH添加到github"><a href="#生成SSH添加到github" class="headerlink" title="生成SSH添加到github"></a>生成SSH添加到github</h3><p>参考廖雪峰博客git文章<a class="link"   target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416%E5%8D%B3%E5%8F%AF" >https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416即可<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="将hexo部署到云端"><a href="#将hexo部署到云端" class="headerlink" title="将hexo部署到云端"></a>将hexo部署到云端</h3><p>通过<code>npm install hexo-deployer-git --save</code>命令下载部署的相应插件</p>
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>但是之后访问<code>http://horacehht.github.io</code>报错404，说<code>There isn&#39;t a GitHub Pages site here.</code></p>
+<p>最后通过<a href="">github page的官方文档</a>得知，如果要作为一个Github Pages仓库，需满足三个条件：</p>
+<ul>
+<li>仓库名为<code>用户名+github.io</code></li>
+<li>仓库应设为public（公开）</li>
+<li>仓库内要创建一个<strong>README</strong>文档</li>
+</ul>
+<h2 id="hexo的基本命令"><a href="#hexo的基本命令" class="headerlink" title="hexo的基本命令"></a>hexo的基本命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Hexo init</td>
+<td align="center">初始化博客</td>
+</tr>
+<tr>
+<td align="center">Hexo s</td>
+<td align="center">运行博客</td>
+</tr>
+<tr>
+<td align="center">Hexo n title</td>
+<td align="center">创建一篇新的文章，title为文章标题</td>
+</tr>
+<tr>
+<td align="center">Hexo c(clean)</td>
+<td align="center">清理文件</td>
+</tr>
+<tr>
+<td align="center">Hexo g(GENERATE)</td>
+<td align="center">生成静态文件</td>
+</tr>
+<tr>
+<td align="center">Hexo d(deploy)</td>
+<td align="center">部署博客</td>
+</tr>
+</tbody></table>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527152411806.png"
+                      alt="image-20210527152411806"  
+                >
+
+<p>hexo项目的_config.yml是<strong>整个hexo项目的总配置文件</strong>，如果需要配置主题，则还有对应主题的配置文件。</p>
+<h2 id="主题挑选"><a href="#主题挑选" class="headerlink" title="主题挑选"></a>主题挑选</h2><p>挑选主题中…selecting</p>
+<p>1.Yun主题是我最喜欢的一个主题，但是继元用的就是这个，怕审美疲劳。demo：<a class="link"   target="_blank" rel="noopener" href="https://www.yunyoujun.cn/" >https://www.yunyoujun.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" >https://github.com/YunYouJun/hexo-theme-yun<i class="fas fa-external-link-alt"></i></a></p>
+<p>2.Anatole主题也可，很简洁。但是文章没有目录。demo：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole" >https://github.com/Ben02/hexo-theme-Anatole<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/mrcore/hexo-theme-Anatole-Core" >https://github.com/mrcore/hexo-theme-Anatole-Core<i class="fas fa-external-link-alt"></i></a></p>
+<p>3.Ayer主题。很全面的一个主题。demo：<a class="link"   target="_blank" rel="noopener" href="https://shen-yu.gitee.io/" >https://shen-yu.gitee.io/<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Shen-Yu/hexo-theme-ayer" >https://github.com/Shen-Yu/hexo-theme-ayer<i class="fas fa-external-link-alt"></i></a></p>
+<p>感觉非常不错。</p>
+<p>4.Particle主题。简洁。但文章没有目录。demo：<a class="link"   target="_blank" rel="noopener" href="https://korilin.com/" >https://korilin.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle" >https://github.com/korilin/hexo-theme-particle<i class="fas fa-external-link-alt"></i></a></p>
+<p>5.shoka主题。交互性强，字体好看，引用块好看。demo：<a class="link"   target="_blank" rel="noopener" href="https://shoka.lostyu.me/" >https://shoka.lostyu.me/<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/amehime/hexo-theme-shoka" >https://github.com/amehime/hexo-theme-shoka<i class="fas fa-external-link-alt"></i></a></p>
+<p>有点花</p>
+<p>6.Keep主题。切换自然。主页面简洁。demo：<a class="link"   target="_blank" rel="noopener" href="https://xpoet.cn/" >https://xpoet.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/XPoet/hexo-theme-keep" >https://github.com/XPoet/hexo-theme-keep<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>最终选定Keep这个主题！</strong>简洁又好看 </p>
+<h2 id="使用Keep主题"><a href="#使用Keep主题" class="headerlink" title="使用Keep主题"></a>使用Keep主题</h2><p>注：配置文件有两个：总配置文件，主题配置文件。下文提到时注意区分</p>
+<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>在git bash中执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
+
+<p>然后themes文件夹下出现我们想要的keep主题。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527220438580.png"
+                      alt="image-20210527220438580" style="zoom: 80%;" 
+                >
+
+<p>这个为<strong>主题配置文件</strong>（这里踩了一些坑，通过npm安装的没有这个文件夹）</p>
+<h3 id="使用主题"><a href="#使用主题" class="headerlink" title="使用主题"></a>使用主题</h3><p>安装完成后，在 Hexo项目的<strong>总配置文件</strong>中将 <code>theme</code> 设置为 <code>keep</code>。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">keep</span></span><br></pre></td></tr></table></figure>
+
+<p>这个文件的路径为<code>name\_config.yml</code>，我的为<code>Horace\_config.yml</code></p>
+<ul>
+<li><p>keep会不定期更新版本，可通过如下命令更新Keep。</p>
+</li>
+<li><p>通过 npm 安装最新版本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site（hexo项目的位置）</span><br><span class="line">$ npm update hexo-theme-keep</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+</li>
+<li><p>通过 git 更新到最新的 master 分支：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/keep</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="配置指南"><a href="#配置指南" class="headerlink" title="配置指南"></a>配置指南</h3><p>复制<strong>主题配置文件</strong>。回到整个博客项目目录下的source文件夹，新建一个文件夹<code>_data</code>，将该文件粘贴进去</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527220544858.png"
+                      alt="image-20210527220544858"
+                ></p>
+<p><strong>将文件名更改为keep.yml</strong>，这很重要！</p>
+<p>然后通过该文件来进行相应的修改即可实现对主题的配置！</p>
+<p>这些是keep官方提供的配置资料，已经很全面了。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html#%E5%AE%89%E8%A3%85" >https://keep-docs.xpoet.cn/usage-tutorial/quick-start.html#%E5%AE%89%E8%A3%85<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#base-info" >https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html#base-info<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/advanced.html" >https://keep-docs.xpoet.cn/usage-tutorial/advanced.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>这三个都是官方给的keep使用教程，分别为快速开始，配置指南和进阶使用，能满足大部分人的需求</p>
+<hr>
+<p>下面仅以base_info为例讲解，其他的配置项请参考官方资料</p>
+<p><strong>base_info</strong>项</p>
+<p>根据自己的内容进行填写</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">base_info:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Horaceの云端梦境</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">Horace</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://horacehht.github.io/</span>  <span class="comment"># 这里填上https://用户名.github.io	如果自己注册了域名，就改成注册的</span></span><br><span class="line">  <span class="comment"># 图标的链接，可以用本地的图片，也可用图片链接，或者不填</span></span><br><span class="line">  <span class="attr">logo_img:</span> <span class="string">https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg</span>  <span class="comment"># 这里我填了一个网页链接</span></span><br></pre></td></tr></table></figure>
+
+<p>读者可以稍微了解<strong>图床</strong>，这里我购买了<a class="link"   target="_blank" rel="noopener" href="https://cn.aliyun.com/" >阿里云<i class="fas fa-external-link-alt"></i></a>的<a class="link"   target="_blank" rel="noopener" href="https://www.aliyun.com/product/oss?spm=5176.10695662.5694434980.1.22cd36b9sJuIpJ" >对象存储服务oss<i class="fas fa-external-link-alt"></i></a>作为图床放置我的图片</p>
+<p>读者同样也可使用免费的图床：</p>
+<ul>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://sm.ms/" >sm.ms<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://imgchr.com/" >路过图床<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
+<p>利用阿里云作图床的文章：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138878534" >https://zhuanlan.zhihu.com/p/138878534<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h3><p>文章都放在source的_posts文件夹下</p>
+<p>文章如果<strong>想放在多个分类或多个标签下</strong>（前提是你开了分类和标签的功能），需要写成<code>[a,b,c]</code>的格式，如图：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210529141615569.png"
+                      alt="image-20210529141615569"
+                ></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之后每次写新文章，就进git bash中敲</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>这样就能在自己的博客网站上看到新发布的文章了！</p>
+<p>如果嫌麻烦的可以参考<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/6943895271751286821" >这篇文章<i class="fas fa-external-link-alt"></i></a>进行<strong>自动部署</strong></p>
+<p>我的博客网站为：<a class="link"   target="_blank" rel="noopener" href="https://horacehht.github.io,欢迎来访/" >https://horacehht.github.io，欢迎来访<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：利用hexo框架搭建个人博客</li>
+        <li>本文作者：Horace</li>
+        <li>创建时间：2021-05-29 14:25:10</li>
+        <li>
+            本文链接：https://horacehht.github.io/2021/05/29/利用hexo框架搭建个人博客/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/27/hello-world/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Horace</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">利用hexo框架搭建个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.2.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E7%AB%AF"><span class="nav-number">1.4.</span> <span class="nav-text">部署到云端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAgithub%E8%B4%A6%E6%88%B7%E4%B8%8E%E5%88%9B%E5%BB%BA%E5%AF%B9%E5%BA%94%E4%BB%93%E5%BA%93"><span class="nav-number">1.4.1.</span> <span class="nav-text">创建github账户与创建对应仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0github"><span class="nav-number">1.4.2.</span> <span class="nav-text">生成SSH添加到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E7%AB%AF"><span class="nav-number">1.4.3.</span> <span class="nav-text">将hexo部署到云端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">1.5.</span> <span class="nav-text">hexo的基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E6%8C%91%E9%80%89"><span class="nav-number">1.6.</span> <span class="nav-text">主题挑选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Keep%E4%B8%BB%E9%A2%98"><span class="nav-number">1.7.</span> <span class="nav-text">使用Keep主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="nav-number">1.7.1.</span> <span class="nav-text">安装主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98"><span class="nav-number">1.7.2.</span> <span class="nav-text">使用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97"><span class="nav-number">1.7.3.</span> <span class="nav-text">配置指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8Ftips"><span class="nav-number">1.7.4.</span> <span class="nav-text">小tips</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.8.</span> <span class="nav-text">总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
