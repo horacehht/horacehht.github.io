@@ -281,13 +281,13 @@
 <p>这里就让github托管我们的博客。</p>
 <h3 id="创建github账户与创建对应仓库"><a href="#创建github账户与创建对应仓库" class="headerlink" title="创建github账户与创建对应仓库"></a>创建github账户与创建对应仓库</h3><p>注册一个github账户，创建（new）一个仓库，仓库名叫<code>用户名+.github.io</code></p>
 <p>我的用户名是horacehht，因此创建一个<code>horacehht.github.io</code>的仓库</p>
-<h3 id="生成SSH添加到github"><a href="#生成SSH添加到github" class="headerlink" title="生成SSH添加到github"></a>生成SSH添加到github</h3><p>参考廖雪峰博客git文章<a class="link"   target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416%E5%8D%B3%E5%8F%AF" >https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416即可<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="生成SSH添加到github"><a href="#生成SSH添加到github" class="headerlink" title="生成SSH添加到github"></a>生成SSH添加到github</h3><p>参考廖雪峰博客git文章<a class="link"   target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416" >https://www.liaoxuefeng.com/wiki/896043488029600/896954117292416<i class="fas fa-external-link-alt"></i></a></p>
 <h3 id="将hexo部署到云端"><a href="#将hexo部署到云端" class="headerlink" title="将hexo部署到云端"></a>将hexo部署到云端</h3><p>通过<code>npm install hexo-deployer-git --save</code>命令下载部署的相应插件</p>
 <p>然后</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>但是之后访问<code>http://horacehht.github.io</code>报错404，说<code>There isn&#39;t a GitHub Pages site here.</code></p>
-<p>最后通过<a href="">github page的官方文档</a>得知，如果要作为一个Github Pages仓库，需满足三个条件：</p>
+<p>最后通过github page的官方文档得知，如果要作为一个Github Pages仓库，需满足三个条件：</p>
 <ul>
 <li>仓库名为<code>用户名+github.io</code></li>
 <li>仓库应设为public（公开）</li>
@@ -334,7 +334,7 @@
 
 <p>hexo项目的_config.yml是<strong>整个hexo项目的总配置文件</strong>，如果需要配置主题，则还有对应主题的配置文件。</p>
 <h2 id="主题挑选"><a href="#主题挑选" class="headerlink" title="主题挑选"></a>主题挑选</h2><p>挑选主题中…selecting</p>
-<p>1.Yun主题是我最喜欢的一个主题，但是继元用的就是这个，怕审美疲劳。demo：<a class="link"   target="_blank" rel="noopener" href="https://www.yunyoujun.cn/" >https://www.yunyoujun.cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>1.Yun主题是我最喜欢的一个主题，但是因为一些特殊原因，怕审美疲劳，就不用了。demo：<a class="link"   target="_blank" rel="noopener" href="https://www.yunyoujun.cn/" >https://www.yunyoujun.cn/<i class="fas fa-external-link-alt"></i></a></p>
 <p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" >https://github.com/YunYouJun/hexo-theme-yun<i class="fas fa-external-link-alt"></i></a></p>
 <p>2.Anatole主题也可，很简洁。但是文章没有目录。demo：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole" >https://github.com/Ben02/hexo-theme-Anatole<i class="fas fa-external-link-alt"></i></a></p>
 <p>github地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/mrcore/hexo-theme-Anatole-Core" >https://github.com/mrcore/hexo-theme-Anatole-Core<i class="fas fa-external-link-alt"></i></a></p>
@@ -354,13 +354,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure>
 
 <p>然后themes文件夹下出现我们想要的keep主题。</p>
-<img  
+<p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210527220438580.png"
-                      alt="image-20210527220438580" style="zoom: 80%;" 
-                >
-
+                     
+                ></p>
 <p>这个为<strong>主题配置文件</strong>（这里踩了一些坑，通过npm安装的没有这个文件夹）</p>
 <h3 id="使用主题"><a href="#使用主题" class="headerlink" title="使用主题"></a>使用主题</h3><p>安装完成后，在 Hexo项目的<strong>总配置文件</strong>中将 <code>theme</code> 设置为 <code>keep</code>。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">keep</span></span><br></pre></td></tr></table></figure>
@@ -400,9 +399,9 @@
 <p>读者可以稍微了解<strong>图床</strong>，这里我购买了<a class="link"   target="_blank" rel="noopener" href="https://cn.aliyun.com/" >阿里云<i class="fas fa-external-link-alt"></i></a>的<a class="link"   target="_blank" rel="noopener" href="https://www.aliyun.com/product/oss?spm=5176.10695662.5694434980.1.22cd36b9sJuIpJ" >对象存储服务oss<i class="fas fa-external-link-alt"></i></a>作为图床放置我的图片</p>
 <p>读者同样也可使用免费的图床：</p>
 <ul>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://sm.ms/" >sm.ms<i class="fas fa-external-link-alt"></i></a></p>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://sm.ms/" >sm.ms<i class="fas fa-external-link-alt"></i></a></p>
 </li>
-<li><p><a class="link"   target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://imgchr.com/" >路过图床<i class="fas fa-external-link-alt"></i></a></p>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://imgchr.com/" >路过图床<i class="fas fa-external-link-alt"></i></a></p>
 </li>
 </ul>
 <p>利用阿里云作图床的文章：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138878534" >https://zhuanlan.zhihu.com/p/138878534<i class="fas fa-external-link-alt"></i></a></p>
@@ -419,7 +418,8 @@
 
 <p>这样就能在自己的博客网站上看到新发布的文章了！</p>
 <p>如果嫌麻烦的可以参考<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/6943895271751286821" >这篇文章<i class="fas fa-external-link-alt"></i></a>进行<strong>自动部署</strong></p>
-<p>我的博客网站为：<a class="link"   target="_blank" rel="noopener" href="https://horacehht.github.io,欢迎来访/" >https://horacehht.github.io，欢迎来访<i class="fas fa-external-link-alt"></i></a></p>
+<p>我的博客网站为：<a href="https://horacehht.github.io/">https://horacehht.github.io</a></p>
+<p>欢迎来访</p>
 
         </div>
 
