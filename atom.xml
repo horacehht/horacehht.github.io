@@ -41,6 +41,30 @@
   </entry>
   
   <entry>
+    <title>win10 git bash 使用wget命令</title>
+    <link href="https://horacehht.github.io/2021/08/07/bash%E4%BD%BF%E7%94%A8wget%E5%91%BD%E4%BB%A4/"/>
+    <id>https://horacehht.github.io/2021/08/07/bash%E4%BD%BF%E7%94%A8wget%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-08-06T16:58:43.000Z</published>
+    <updated>2021-08-06T17:08:48.170Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Windows-10-git-bash-wget-command-not-found"><a href="#Windows-10-git-bash-wget-command-not-found" class="headerlink" title="Windows 10 git bash wget command not found"></a>Windows 10 git bash wget command not found</h1><p>因为我之前在git bash中试过敲Linux的命令，比如<code>ls</code>,<code>cd</code>,<code>mkdir</code></p><p>然后我搭服务器的时候就有用过<code>wget</code>来进行下载和<code>tar</code>来进行解压</p><p>我就想着git bash应该也可以运行其他的Linux命令吧。</p><p>于是敲了一下，报错<code>wget command not found</code></p><p>我就在网上查找资料，最后成功实现了git bash中运用wget命令</p><p>步骤如下：</p><p>1.进入该网址<a class="link" href="https://eternallybored.org/misc/wget/%EF%BC%8C%E6%A0%B9%E6%8D%AE%E4%BD%A0%E7%94%B5%E8%84%91%E7%9A%84%E4%BD%8D%E6%95%B0%EF%BC%8832%EF%BC%8C64%EF%BC%89%E6%9D%A5%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94wget%E7%9B%B8%E5%85%B3%E7%9A%84exe">https://eternallybored.org/misc/wget/，根据你电脑的位数（32，64）来下载对应wget相关的exe<i class="fas fa-external-link-alt"></i></a></p><p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210806215729152.png" alt="image-20210806215729152"></p><p>（这里我下载了1.21.1版本的64-bit的exe）</p><p>2.将该exe文件移至git目录下的mingw64的bin文件夹下</p><p>我的是<code>F:\Git\mingw64\bin</code>，这个因人而异</p><p>3.将上面那个路径添加进环境变量</p><p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210806220355358.png" alt="image-20210806220355358"></p><p>之后就可以快乐地在git bash里敲<code>wget</code>命令啦！</p><p>其他用不了的Linux命令也是这样解决</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="git" scheme="https://horacehht.github.io/categories/git/"/>
+    
+    
+    <category term="tips" scheme="https://horacehht.github.io/tags/tips/"/>
+    
+  </entry>
+  
+  <entry>
     <title>降维算法</title>
     <link href="https://horacehht.github.io/2021/08/04/%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95/"/>
     <id>https://horacehht.github.io/2021/08/04/%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95/</id>
