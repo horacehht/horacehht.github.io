@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="技术 生活">
+    <meta name="description" content="Horace的个人博客网站，记录技术与生活">
+    <meta name="author" content="Horace">
+    
+    <title>
+        
+            Linux学习 |
+        
+        一方净土
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"horacehht.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210605222026437.png","favicon":"https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/网站图标.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"可可爱爱，没有脑袋"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="一方净土" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                一方净土
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Linux学习</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20210605222026437.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Horace</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-02-15 18:51:50
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>12 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Linux文件系统"><a href="#Linux文件系统" class="headerlink" title="Linux文件系统"></a>Linux文件系统</h2><p>windows下有C，D盘的盘符区别，Linux没有盘符概念，只有一个<strong>根目录</strong>，以<code>/</code>为标识</p>
+<p>根目录下有这几个目录：<code>/bin,/etc,/home,/lib,/usr</code></p>
+<p>作用详见：<a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/duanji/p/yueding2.html">https://www.cnblogs.com/duanji/p/yueding2.html<i class="fas fa-external-link-alt"></i></a></p>
+<p><code>/home/用户名</code>：存储用户相关的一些文档</p>
+<p><code>/usr</code>：usr是user的缩写，安装的应用程序</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>命令的格式为：cmd-option parameter</p>
+<p>cmd是命令，就是一个操作，必须要有</p>
+<p>parameter一般是要操作的对象</p>
+<p>option一般是用来修饰parameter的，用于表明parameter是怎样的对象</p>
+<p><code>cmd --help</code>即可获得命令cmd的文档，介绍了命令的用法和作用，了解各参数的意义</p>
+<p><code>man rm</code>：man是manual的缩写，可以打开rm的用户手册，用上箭头和下箭头进行移动，退出按q</p>
+<p><code>pwd</code>：（print work directory）可查看当前所在目录</p>
+<p><code>ls</code>：（list）列出当前所有的文件，蓝色的代表文件夹，白色的代表文件</p>
+<p><code>cd</code>：（change directory）切换目录，</p>
+<p><code>clear</code>：清空整个终端界面的输出内容</p>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p><code>cd ..</code>：切换到上一级目录，也可跳两级，要用左斜杠<code>/</code><br><code>cd .</code>：则是当前目录</p>
+<p><code>cd ../..</code>：连跳两级目录</p>
+<p><code>cd ~</code>：回到home目录</p>
+<p><code>cd -</code>：切换回上次操作所在的目录</p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p><code>ls -l</code>：以<strong>列表的形式</strong>列出（可以缩写成<code>ll</code>）</p>
+<ul>
+<li>可以看到<strong>文件创建的时间</strong></li>
+<li>数字是目录/<strong>文件所占的字节大小</strong></li>
+<li>total是目录下的文件占的总大小（单位为kB）</li>
+</ul>
+<p>但有隐藏的文件，那么怎么通过ls看到隐藏的文件呢？</p>
+<p><code>ls -a</code>：a是all的缩写，<strong>显示所有文件（包括隐藏文件）</strong></p>
+<p>-a和-l可以一起使用，而-h要和-l一起使用才能起作用，不同在于显示的单位转换成了K</p>
+<p><strong>不同的参数可以写在一块</strong>，比如说-lh，<strong>对顺序不敏感</strong></p>
+<p>ls -lha，其中有两个特殊的地方，出现了<code>.</code>，代表当前目录，出现也了<code>..</code>，代表上级目录，之所以出现了这两个，是需要<strong>记录文件夹的层级关系</strong></p>
+<p>我们发现<strong>隐藏文件都是以<code>.</code>开头的</strong></p>
+<h4 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h4><p>缩小范围进行ls查找</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><code>*</code>，匹配零个或多个任意字符，<code>ls *.txt</code>，则要求只列出以txt结尾的文件</p>
+<p>可以这么理解，<strong>ls后面可跟正则表达式</strong></p>
+<p><code>?</code>，匹配一个字符，<code>ls ???.odt</code>，只列出三个字母或数字的odt文件</p>
+<p>可以根据*？组合出不同的正则表达式来进行文件的查询</p>
+<p><code>[]</code>，匹配中括号内任意一个字符，<code>[1234]</code>，匹配1或者2或者3或者4 ，也可以<code>[1-4]</code>匹配1到4内的任意一个数字</p>
+<p><code>[ar1]</code>，匹配三个字符中的任意一个，<code>[a-z]</code>匹配任意小写字符，然而大写的字母并不行</p>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>用于创建<strong>文件</strong>，不能创建目录，<code>touch 文件名.文件格式</code></p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>用于创建<strong>目录</strong>，<code>mkdir 目录名</code>，只能一级一级的创建目录</p>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>remove的缩写，用于删除<strong>文件和目录</strong></p>
+<p><code>rm test.txt</code>：删除test.txt文件</p>
+<p>删除目录时需要添加一个参数<code>-d</code>，d是directory的意思，<code>rm -d bb</code>删除一个bb的目录</p>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>move的缩写，用于<strong>移动文件</strong></p>
+<p><code>mv 123.txt bb</code>：把123.txt文件移动到bb目录下，这是<strong>基于相对路径</strong>进行移动</p>
+<p><code>mv 123.txt /home/用户名/Desktop/bb</code>：把123.txt文件移动到桌面的bb目录下，这基于<strong>绝对路径</strong>进行移动</p>
+<p>也可以<strong>移动目录</strong>，<code>mv bb aa</code>把bb目录移动到aa目录</p>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>copy的缩写，用于<strong>复制文件和目录</strong></p>
+<p><code>cp a23.txt bb</code>：把a23.txt拷贝到bb目录下</p>
+<p><code>cp -r bb/aa .</code>：把bb目录下的aa目录拷贝到当前目录（移动目录时需要指定-r）</p>
+<p><code>cp a23.txt bb/a29.txt</code>：把a23.txt拷贝到bb目录下，并重命名为a29</p>
+<h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>每个命令执行的时候，都会去执行一个程序。而<code>which</code>命令可以查看到<strong>命令程序所处的目录</strong></p>
+<p>命令一般都放到/bin中，bin是binary二进制的意思</p>
+<p>但which cd是空的，这是因为<strong>cd是shell内置的命令</strong></p>
+<p>带s的命令，则需要更高的权限</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>具有文件搜索的功能，功能更强，速度受计算机影响</p>
+<h4 id="精确搜索"><a href="#精确搜索" class="headerlink" title="精确搜索"></a>精确搜索</h4><p>格式：<code>find 搜索目录 搜索条件</code></p>
+<p>比如说要在/home目录下，搜索一个125.odt文件，此时需要加一个<code>-name</code>选项</p>
+<h4 id="模糊搜索"><a href="#模糊搜索" class="headerlink" title="模糊搜索"></a>模糊搜索</h4><p>此时搜索条件中加上通配符即可，即写成正则表达式。</p>
+<p><code>find /home 12*</code></p>
+<p>Linux中查找对大小写敏感，所以如果要忽略大小写，加一个<code>-iname</code>选项</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215115256012.png" alt="image-20220215115256012"></p>
+<h4 id="按文件大小搜索"><a href="#按文件大小搜索" class="headerlink" title="按文件大小搜索"></a>按文件大小搜索</h4><p><code>find 路径 -size +1</code>，其中数字的单位为一个<strong>数据块</strong>，一个数据块为<strong>512k</strong>，而<code>+</code>号表示要搜索大于1数据块的文件/目录，<code>-</code>号则是小于</p>
+<h4 id="按文件所属人"><a href="#按文件所属人" class="headerlink" title="按文件所属人"></a>按文件所属人</h4><p><code>find 路径 -user 用户名</code></p>
+<h4 id="按文件被修改时间"><a href="#按文件被修改时间" class="headerlink" title="按文件被修改时间"></a>按文件被修改时间</h4><p>假如说电脑被黑客入侵了，知道大概的入侵时间，想知道什么文件被访问过了，就可以按文件修改时间来进行搜索</p>
+<p><code>find 路径 -mmin -5 </code>，第一个m是modified的缩写，min说明单位是分钟，<code>-</code>号代表想查询小于5分钟之内的</p>
+<p><strong>mmin</strong>是文件内容<strong>被修改</strong>的时间</p>
+<p><strong>amin</strong>选项用来查询上次<strong>被访问</strong>的时间</p>
+<p><strong>cmin</strong>是<strong>文件属性（如权限）被修改</strong>的时间</p>
+<h4 id="按照文件类型"><a href="#按照文件类型" class="headerlink" title="按照文件类型"></a>按照文件类型</h4><p><code>find 目录 -type 字母</code></p>
+<p>根据字母的不同，可以查询不同的文件类型</p>
+<p>f：（file）文件</p>
+<p>d：（directory）目录</p>
+<p>l：（link）软链接</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215135645896.png" alt="image-20220215135645896"></p>
+<h4 id="搜索条件复合"><a href="#搜索条件复合" class="headerlink" title="搜索条件复合"></a>搜索条件复合</h4><p>利用<code>-a</code>连接两个条件达到<strong>and效果</strong>，连接的条件都需要符合</p>
+<p><code>-o</code>连接两个条件达到<strong>or效果</strong>，连接的条件符合一个即可</p>
+<h4 id="根据id进行搜索"><a href="#根据id进行搜索" class="headerlink" title="根据id进行搜索"></a>根据id进行搜索</h4><p>id是不重复的，首先我们要知道文件的id，此时我们可以用<code>ls -i</code>显示文件的id</p>
+<p><code>find 路径 -inum id</code>，inum是id number</p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>用于查看文件内容，<code>cat 123.txt</code>，查看123.txt文件内容</p>
+<p><code>-b</code>：输出时文件内容时标出行号，空行不计入行数计算</p>
+<p><code>-n</code>：与-b类似，但空行计入行数计算</p>
+<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>用于查看文件内容，与cat不同的点在于more分页展示。</p>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>用于<strong>文件内容的搜索</strong>，会显示出文件中包含关键字的那行内容</p>
+<p><code>gerp user 123.txt</code>：在123.txt中查询user行的内容</p>
+<p><code>-n</code>：搜索出来时标出搜索内容所在的行</p>
+<p><code>-i</code>：搜索时忽略大小写</p>
+<p><code>-v</code>：反向搜索，搜索不包含关键字的内容，如<code>grep '#' 123.txt</code>，在123.txt中输出不含#号的内容（即去掉注释）</p>
+<p>如果我们只想去掉<strong>以#开头</strong>的那部分内容，那就在#号前加上一个**尖号<code>^</code>**，表示以什么开头，如<code>gerp ^'#' 123.txt</code></p>
+<p>如果只搜以s<strong>结尾</strong>的，则在内容后加上一个**美元符号<code>$</code>**，如<code>gerp s$ 123.txt</code>，表示从123.txt中搜索以s结尾的行</p>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>回显命令</p>
+<p><code>echo hello</code>，则会在控制台上输出hello</p>
+<p>还可以将内容写入一些文件中，如<code>echo hello &gt; 123.txt</code>，把hello写入123.txt中，但会<strong>覆盖掉原文件内容</strong></p>
+<p>如果我们只是想追加内容到文件中，不覆盖原文件，我们把<code>&gt;</code>改成<code>&gt;&gt;</code>即可，<code>echo hello &gt;&gt; 123.txt</code></p>
+<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><p>sudo可以获取到超管（root）权限，常加载一些需要超管权限的命令前</p>
+<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><p>用于文本内容的编辑</p>
+<p>比如要在train.py文件的最后一行追加一行，则可以这样写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed "$a print('done!')" train.py</span><br></pre></td></tr></table></figure>
+
+<p>a是addition</p>
+<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>对文件进行打包压缩</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>此命令用于显示当前进程的状态</p>
+<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p>用于更改文件权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch test.sh</span><br></pre></td></tr></table></figure>
+
+<p>生成一个sh文件</p>
+<p>接着在.sh文件中输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!bin/bash</span></span><br><span class="line">echo "Hello World!"</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ./test.sh </span><br><span class="line">./test.sh</span><br></pre></td></tr></table></figure>
+
+<p>此时控制台则可输出Hello world</p>
+<p><code>+</code>：增加文件的某个权限</p>
+<p><code>-</code>：去除文件的某个权限</p>
+<p>读，写，执行权限分别对应r,w,x三个字母</p>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>是一个文件下载工具，用于下载网络上的各种资源和软件</p>
+<h2 id="Trick"><a href="#Trick" class="headerlink" title="Trick"></a>Trick</h2><h3 id="tab"><a href="#tab" class="headerlink" title="tab"></a>tab</h3><p>按<strong>tab可自动补全</strong>，假如说cd Des，此时按下tab则可自动补全</p>
+<p>但如果按D，有多个匹配的，此时我们<strong>按两次tab</strong>，终端可输出搜索到的D开头的目录，此时会更方便我们进入想进入的目录</p>
+<h3 id="上下方向键"><a href="#上下方向键" class="headerlink" title="上下方向键"></a>上下方向键</h3><p>可回到上一条命令或下一条命令</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="~"></a>~</h3><p>波浪号~是home目录，cd ~可直接回到home目录</p>
+<h3 id="隐藏文件-目录"><a href="#隐藏文件-目录" class="headerlink" title="隐藏文件/目录"></a>隐藏文件/目录</h3><p>以<code>.</code>开头的文件和目录是隐藏的，如<code>.test2.txt</code>是隐藏文件</p>
+<h3 id="文件或目录包含空格"><a href="#文件或目录包含空格" class="headerlink" title="文件或目录包含空格"></a>文件或目录包含空格</h3><p>需要对这些文件或目录进行操作时，需要使用<code>''</code>对文件名或目录名进行包裹，即可进行操作</p>
+<h3 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h3><p>在使用mv命令时，可以进行重命名</p>
+<p><code>mv 123.txt ./124.txt</code>：重命名为124.txt</p>
+<p>复制的时候页同样可以进行此操作</p>
+<h3 id="命令结果存入相应文件中"><a href="#命令结果存入相应文件中" class="headerlink" title="命令结果存入相应文件中"></a>命令结果存入相应文件中</h3><p>有时我们想将命令输出的内容保存到某个文件当中作记录，只需在原本命令后加入<code>&gt; 文件名</code>或<code>&gt;&gt; 文件名</code></p>
+<p>详见如下图片</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215151635661.png" alt="image-20220215151635661"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215151755902.png" alt="image-20220215151755902"></p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>为什么要用管道？</p>
+<p>把一个命令的输出，<strong>通过管道连接</strong>，可作为另一个命令的输入</p>
+<p>这里的输出指的是命令的结果，输入指的是命令的参数（cat xxx.txt  这个txt文件就是cat的参数）</p>
+<p>利用符号<code>|</code>进行管道连接</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215153149672.png" alt="image-20220215153149672"></p>
+<h3 id="硬链接与软链接"><a href="#硬链接与软链接" class="headerlink" title="硬链接与软链接"></a>硬链接与软链接</h3><p>Linux下的<strong>链接</strong>类似于windows下的快捷方式，Linux下分有两种链接方式：<strong>硬链接</strong>，<strong>软链接</strong></p>
+<h4 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h4><p>在Linux中，一个文件被创建时，文件也有其自身的inode（称为索引节点，相当于文件的地址），而硬链接是<strong>通过索引节点进行的链接</strong>。硬链接是创建一个具有相同inode但文件名不同的文件，所以删除硬链接对应的源文件，硬链接文件仍然存在，可以起到防误删的作用。</p>
+<p>与复制操作的区别相当于：复制会生成一个inode不同的文件。</p>
+<p>其通过<code>ln</code>或<code>link</code>命令创建，如<code>ln oldfile newfile</code></p>
+<h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>也称<strong>符号链接</strong>，生成的软链接文件存放的内容是另一文件的<strong>路径的指向</strong>，可以对文件或目录创建。</p>
+<p>软链接主要应用于以下两个方面：</p>
+<p>一是<strong>方便管理</strong>，例如可以把一个复杂路径下的文件链接到一个简单路径下方便用户访问；</p>
+<p>另一方面就是解决<strong>文件系统磁盘空间不足</strong>的情况。例如某个文件文件系统空间已经用完了，但是现在必须在该文件系统下创建一个新的目录并存储大量的文件，那么可以把另一个剩余空间较多的文件系统中的目录链接到该文件系统中，这样就可以很好的解决空间不足问题。删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接就变成了死链接。</p>
+<p><code>ln -s 目标目录 软链接地址</code>，如<code>ln -s /var/www/test test</code>，当前路径创建test，其指向/var/www/test目录</p>
+<p>目标目录为软链接指向的目标目录，软链接地址为“快捷键”文件名称</p>
+<p>删除软链接用<code>rm -rf</code>即可</p>
+<p>修改软链接<code>ln -snf 新目标目录 软链接地址</code></p>
+<p>下面为演示样例，桌面下有bb目录，bb目录下有aa目录</p>
+<p>此时我们在桌面下创建一个指向bb目录的软链接，命名为soft</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215164303942.png" alt="image-20220215164303942"></p>
+<p>此时桌面上出现了一个soft，我们点开，发现进入了bb目录，目录显示为soft</p>
+<p>此时我们修改soft软链接，使其指向bb目录下的aa目录，<code>ln -snf bb/aa soft</code>，再重新打开soft</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215164623874.png" alt="image-20220215164623874"></p>
+<p>成功地进入了aa目录</p>
+<p>其实也可以让<strong>软链接指向一个文件</strong>，这里我们修改soft指向bb目录下的125.txt文件</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://horacehhtbucket.oss-cn-guangzhou.aliyuncs.com/img/image-20220215165010396.png" alt="image-20220215165010396"></p>
+<p>但一般都不会让软链接指向文件</p>
+<h3 id="关于用户"><a href="#关于用户" class="headerlink" title="关于用户"></a>关于用户</h3><p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
+<h4 id="添加用户useradd"><a href="#添加用户useradd" class="headerlink" title="添加用户useradd"></a>添加用户useradd</h4><p><code>useradd [option] username</code></p>
+<p>option</p>
+<p><code>-g</code>：指定用户所属的用户组</p>
+<p>如<code>-g group1</code>，则该用户属于group1组</p>
+<p><code>-d</code>：指定用户主目录，若该目录不存在 ，则加上<code>-m</code>选项</p>
+<p><code>useradd -d /home/sam -m sam</code>，创建一个用户sam，其主目录在/home/sam下</p>
+<h4 id="删除账号userdel"><a href="#删除账号userdel" class="headerlink" title="删除账号userdel"></a>删除账号userdel</h4><p><code>userdel [option] username</code></p>
+<p>常用的选项是 <strong>-r</strong>，它的作用是把用户的主目录一起删除。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel -r sam</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="用户口令管理passwd"><a href="#用户口令管理passwd" class="headerlink" title="用户口令管理passwd"></a>用户口令管理passwd</h4><p>用户账号刚创建时账号被锁定，必须为其指定口令后方可使用</p>
+<p><code>passwd [option] username</code></p>
+<ul>
+<li>-l 锁定口令，即禁用账号。</li>
+<li>-u 口令解锁。</li>
+<li>-d 使账号无口令。</li>
+<li>-f 强迫用户下次登录时修改口令。</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Linux学习</li>
+        <li>本文作者：Horace</li>
+        <li>创建时间：2022-02-15 18:51:50</li>
+        <li>
+            本文链接：https://horacehht.github.io/2022/02/15/Linux学习/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/08/%E5%B0%8F%E8%80%81%E9%BC%A0%E8%B5%B0%E8%BF%B7%E5%AE%AB/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">小老鼠走迷宫</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '9urCUVO8PgjCE4qEJ19RT5pa-gzGzoHsz',
+                    appKey: '0sPMzcNwGR4WXRbMcVKIUO5V',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '👀说些什么呢?...',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'Horace';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Horace</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">Linux文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">2.1.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">2.2.</span> <span class="nav-text">ls</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-number">2.2.1.</span> <span class="nav-text">通配符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#touch"><span class="nav-number">2.3.</span> <span class="nav-text">touch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir"><span class="nav-number">2.4.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">2.5.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">2.6.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-number">2.7.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#which"><span class="nav-number">2.8.</span> <span class="nav-text">which</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">2.9.</span> <span class="nav-text">find</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B2%BE%E7%A1%AE%E6%90%9C%E7%B4%A2"><span class="nav-number">2.9.1.</span> <span class="nav-text">精确搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2"><span class="nav-number">2.9.2.</span> <span class="nav-text">模糊搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E6%90%9C%E7%B4%A2"><span class="nav-number">2.9.3.</span> <span class="nav-text">按文件大小搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E4%BA%BA"><span class="nav-number">2.9.4.</span> <span class="nav-text">按文件所属人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E6%96%87%E4%BB%B6%E8%A2%AB%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4"><span class="nav-number">2.9.5.</span> <span class="nav-text">按文件被修改时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.9.6.</span> <span class="nav-text">按照文件类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%9D%A1%E4%BB%B6%E5%A4%8D%E5%90%88"><span class="nav-number">2.9.7.</span> <span class="nav-text">搜索条件复合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AEid%E8%BF%9B%E8%A1%8C%E6%90%9C%E7%B4%A2"><span class="nav-number">2.9.8.</span> <span class="nav-text">根据id进行搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">2.10.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more"><span class="nav-number">2.11.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">2.12.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">2.13.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sudo"><span class="nav-number">2.14.</span> <span class="nav-text">sudo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed"><span class="nav-number">2.15.</span> <span class="nav-text">sed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar"><span class="nav-number">2.16.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">2.17.</span> <span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">2.18.</span> <span class="nav-text">chmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wget"><span class="nav-number">2.19.</span> <span class="nav-text">wget</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trick"><span class="nav-number">3.</span> <span class="nav-text">Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tab"><span class="nav-number">3.1.</span> <span class="nav-text">tab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%B9%E5%90%91%E9%94%AE"><span class="nav-number">3.2.</span> <span class="nav-text">上下方向键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">3.3.</span> <span class="nav-text">~</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95"><span class="nav-number">3.4.</span> <span class="nav-text">隐藏文件&#x2F;目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E5%8C%85%E5%90%AB%E7%A9%BA%E6%A0%BC"><span class="nav-number">3.5.</span> <span class="nav-text">文件或目录包含空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6"><span class="nav-number">3.6.</span> <span class="nav-text">重命名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E7%BB%93%E6%9E%9C%E5%AD%98%E5%85%A5%E7%9B%B8%E5%BA%94%E6%96%87%E4%BB%B6%E4%B8%AD"><span class="nav-number">3.7.</span> <span class="nav-text">命令结果存入相应文件中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-number">3.8.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E4%B8%8E%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">3.9.</span> <span class="nav-text">硬链接与软链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="nav-number">3.9.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">3.9.2.</span> <span class="nav-text">软链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%94%A8%E6%88%B7"><span class="nav-number">3.10.</span> <span class="nav-text">关于用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7useradd"><span class="nav-number">3.10.1.</span> <span class="nav-text">添加用户useradd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%B4%A6%E5%8F%B7userdel"><span class="nav-number">3.10.2.</span> <span class="nav-text">删除账号userdel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%8F%A3%E4%BB%A4%E7%AE%A1%E7%90%86passwd"><span class="nav-number">3.10.3.</span> <span class="nav-text">用户口令管理passwd</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
